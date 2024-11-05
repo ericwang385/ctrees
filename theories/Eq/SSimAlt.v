@@ -33,7 +33,7 @@ Section StrongSimAlt.
     (R Reps : rel (ctree E C X) (ctree F D Y))
     (t : ctree E C X) (u : ctree F D Y) :=
     (productive t -> forall l t', trans l t t' -> exists l' u', trans l' u u' /\ R t' u' /\ L l l') /\
-    (forall {Z} (c : C Z) k, t ≅ BrD c k -> forall x, exists u', epsilon u u' /\ Reps (k x) u').
+    (forall {Z : Type} (c : C Z) k, t ≅ BrD c k -> forall x, exists u', epsilon u u' /\ Reps (k x) u').
 
   #[global] Instance weq_ss'_gen {E F C D X Y} `{HasB0: B0 -< C} `{HasB0': B0 -< D} :
     Proper (weq ==> weq) (@ss'_gen E F C D X Y _ _).
